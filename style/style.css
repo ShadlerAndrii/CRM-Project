@@ -18,19 +18,6 @@
     max-width: 200px;
   }
 
-  header nav {
-    text-align: left;
-  }
-
-  header nav ul {
-    padding: 0;
-  }
-
-  header nav ul li {
-    display: block;
-    margin: 5px 0;
-  }
-
   .footer-column ul {
     flex-direction: column;
     align-items: center;
