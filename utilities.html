@@ -127,8 +127,8 @@
                 }
             }, methods: {
                 async Calculate() {
-                    var rawLength = document.getElementById("fieldLength").value;
-                    var rawWidth = document.getElementById("fieldWidth").value;
+                    let rawLength = document.getElementById("fieldLength").value;
+                    let rawWidth = document.getElementById("fieldWidth").value;
 
                     if ((/[a-zA-Z]/g.test(rawLength)) || (/[a-zA-Z]/g.test(rawWidth))) {
                         document.getElementsByName("calcinput").forEach(input => {
@@ -137,14 +137,13 @@
                         alert("Please enter valid numbers! (Contains letters)");
                     }
                     else {
-                        var length = parseFloat(rawLength);
-                        var width = parseFloat(rawWidth);
+                        let length = parseFloat(rawLength);
+                        let width = parseFloat(rawWidth);
 
                         if (isNaN(length) && isNaN(width)) {
                             document.getElementsByName("calcinput").forEach(input => {
-                                input.value = "error";
+                                input.value = "";
                             });
-                            alert("Please enter valid numbers!");
                         }
                         else if (length <= 0 || width <= 0) {
                             document.getElementsByName("calcinput").forEach(input => {

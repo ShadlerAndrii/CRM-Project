@@ -4,14 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/jquery.inputmask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <title>Project</title>
+        integrity="sa384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymoush"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.16/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/v-mask/2.0.1/v-mask.min.js"></script>
+    <title>CRM-Project</title>
 </head>
 
 <body>
@@ -31,183 +41,332 @@
         </div>
     </header>
 
-    <div id="content">
-        <div class="content-block" id="project-news">
-            <h2>Project News</h2>
-            <hr>
-            <h3>Launch of a New CRM System for Agriculture!</h3>
-            <p>We are excited to announce the launch of our new website,
-                designed specifically for managing agricultural processes.
-                Our CRM system is built to streamline the work of farmers,
-                offering easy access to all data related to crops, fieldwork,expenses, and logistics.
-                Leverage modern tools to increase the efficiency of your agricultural business!</p>
-            <hr>
-            <h3>Unexpected contact!</h3>
-            <p>Our website launch has caught the attention of extraterrestrial visitors!
-                In an unexpected twist, a group of aliens has reached out to us with a unique business proposal.
-                They want us to cultivate cannabis for them on an intergalactic scale!
-                While we're still processing the details of this out-of-this-world offer,
-                we're thrilled about the potential for interstellar collaboration.
-                Stay tuned as we explore this incredible opportunity to expand our horizons—quite literally!
-                <br>
-                #AlienBusiness #OutOfThisWorld #CosmicCannabis
-            </p>
-        </div>
-
-        <div class="content-block" id="client-list">
-            <h2>List of clients</h2>
-            <ul>
-                <li>First client</li>
-                <li>Second client</li>
-                <li>Third client</li>
-            </ul>
-            <div class="lds-roller">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+    <div id="app">
+        <div id="content">
+            <div class="content-block" id="project-news">
+                <h2>Project News</h2>
+                <hr>
+                <h3>Launch of a New CRM System for Agriculture!</h3>
+                <p>We are excited to announce the launch of our new website,
+                    designed specifically for managing agricultural processes.
+                    Our CRM system is built to streamline the work of farmers,
+                    offering easy access to all data related to crops, fieldwork,expenses, and logistics.
+                    Leverage modern tools to increase the efficiency of your agricultural business!</p>
+                <hr>
+                <h3>Unexpected contact!</h3>
+                <p>Our website launch has caught the attention of extraterrestrial visitors!
+                    In an unexpected twist, a group of aliens has reached out to us with a unique business proposal.
+                    They want us to cultivate cannabis for them on an intergalactic scale!
+                    While we're still processing the details of this out-of-this-world offer,
+                    we're thrilled about the potential for interstellar collaboration.
+                    Stay tuned as we explore this incredible opportunity to expand our horizons—quite literally!
+                    <br>
+                    #AlienBusiness #OutOfThisWorld #CosmicCannabis
+                </p>
             </div>
-        </div>
 
-        <div class="content-block" id="photo-slider">
-            <h2>Field Photo</h2>
-            <div class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                        <span>Wheat field</span>
-                        <img src="images/fieldWheat.jpg" class="d-block w-100" alt="First field">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <span>Rice field</span>
-                        <img src="images/fieldRice.jpg" class="d-block w-100" alt="Second field">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                        <span>Hemp field</span>
-                        <img src="images/fieldHemp.jpg" class="d-block w-100" alt="Third field">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3 style="text-align: center;">Contacts</h3>
+            <div class="content-block" id="client-list">
+                <h2>List of clients</h2>
                 <ul>
-                    <li>
-                        <a href="tel:+1234567890">
-                            <i class="fas fa-phone"></i> Phone
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:example@example.com">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://t.me/yourusername" target="_blank">
-                            <i class="fab fa-telegram-plane"></i> Telegram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://wa.me/1234567890" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </li>
-                    <li>
-                        <a href="viber://chat?number=+1234567890" target="_blank">
-                            <i class="fab fa-viber"></i> Viber
-                        </a>
-                    </li>
+                    <li>First client</li>
+                    <li>Second client</li>
+                    <li>Third client</li>
                 </ul>
-                <a href="FAQ.html" class="open-btn" style="text-decoration: none;">
-                    <p style="font-weight: bold; color: black; text-align: center;">Open FAQ</p>
-                </a>
+                <!-- <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div> -->
+            </div>
+
+            <div class="content-block" id="photo-slider">
+                <h2>Field Photo</h2>
+                <div class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <span>Wheat field</span>
+                            <img src="images/fieldWheat.jpg" class="d-block w-100" alt="First field">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <span>Rice field</span>
+                            <img src="images/fieldRice.jpg" class="d-block w-100" alt="Second field">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <span>Hemp field</span>
+                            <img src="images/fieldHemp.jpg" class="d-block w-100" alt="Third field">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3 style="text-align: center;">Contacts</h3>
+                    <ul>
+                        <li>
+                            <a href="tel:+1234567890">
+                                <i class="fas fa-phone"></i> Phone
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:example@example.com">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/yourusername" target="_blank">
+                                <i class="fab fa-telegram-plane"></i> Telegram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/1234567890" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="viber://chat?number=+1234567890" target="_blank">
+                                <i class="fab fa-viber"></i> Viber
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="FAQ.html" class="open-btn" style="text-decoration: none;">
+                        <p style="font-weight: bold; color: black; text-align: center;">Open FAQ</p>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="Log-in" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="Log-inLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="Log-inLabel">Log-in account:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <input id="email" type="text" class="form-control" placeholder="Your Email adress"
+                                aria-label="Your Email adress" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input id="password" type="text" class="form-control" placeholder="Your password"
+                                aria-label="Your password" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Log-in</button>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#Sign-in">Create new account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Sign-in" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="Sign-inLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="Sign-inLabel">Create account:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form @submit.prevent="createAccount" name="sign-in-form">
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <input id="newEmail" type="text" class="form-control" placeholder="Your Email adress"
+                                    aria-label="Your Email adress" aria-describedby="basic-addon1"
+                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                                    title="Please enter a valid email address (eg: name@example.com)" required>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input id="newPassword" type="text" class="form-control" placeholder="Your password"
+                                    aria-label="Your password" aria-describedby="basic-addon1"
+                                    pattern="[A-Za-z0-9\W+]{6,}"
+                                    title="The password must contain at least 6 characters in Latin/Numbers" required>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input id="newSurname" type="text" class="form-control" placeholder="Your surname"
+                                    aria-label="Your surname" aria-describedby="basic-addon1" pattern="[A-Za-z]{0,20}"
+                                    title="Enter your surname in Latin (20 characters maximum)" required>
+                                <input id="newName" type="text" class="form-control" placeholder="Your name"
+                                    aria-label="Your name" aria-describedby="basic-addon1" pattern="[A-Za-z]{0,20}"
+                                    title="Enter your name in Latin (20 characters maximum)" required>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input id="newPhone" type="text" class="form-control"
+                                    placeholder="Your phone number: +38(0__)-___-__-__" aria-label="Your phone number"
+                                    aria-describedby="basic-addon1" v-mask="'+38(0##)-###-##-##'" v-model="phone"
+                                    pattern="^\+38\(0\d{2}\)-\d{3}-\d{2}-\d{2}$"
+                                    title="Enter the phone number in the format: +38(0__)___-__-__" required>
+                            </div>
+
+                            <div>
+                                <p>Please select your date of birth:</p>
+                                <input id="newBirthday" type="date" class="form-control" aria-label="Your date of birth"
+                                    aria-describedby="basic-addon1" title="Enter your date of birth" required>
+                                <br>
+                            </div>
+
+                            <div>
+                                <p>Please select your sex:</p>
+                                <input id="newMaleSex" type="radio" name="sex" value="Male" required>
+                                <label for="male">Male</label>
+                                <br>
+                                <input id="newFemaleSex" type="radio" name="sex" value="Female" required>
+                                <label for="female">Female</label>
+                                <br><br>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <select id="newRole" class="custom-select" required>
+                                    <option value="" selected disabled>Choose your role:</option>
+                                    <option value="Buyer">Buyer</option>
+                                    <option value="Seller">Seller</option>
+                                </select>
+                            </div>
+
+                            <!-- <div class="input-group mb-3">
+                                <input type="file" accept=".png, .jpg, .jpeg">
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Create new
+                                account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Surname</th>
+                            <th>Name</h>
+                            <th>Phone</th>
+                            <th>Birthday</th>
+                            <th>Sex</h>
+                            <th>Role</h>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr :id="user.id" v-for="user in users" class="text-center">
+                            <td><input id="Id" type="checkbox" v-model="user.checked"></td>
+                            <td><input id="Email" type="text" v-model="user.email" disabled></td>
+                            <td><input id="Password" type="text" v-model="user.password" disabled></td>
+                            <td><input id="Surname" type="text" v-model="user.surname" disabled></td>
+                            <td><input id="Name" type="text" v-model="user.name" disabled></td>
+                            <td><input id="Phone" type="text" v-model="user.phone" disabled></td>
+                            <td><input id="DateOfBirth" type="text" v-model="user.birthday" disabled></td>
+                            <td><input id="Sex" type="text" v-model="user.sex" disabled></td>
+                            <td><input id="Role" type="text" v-model="user.role" disabled></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <button @click="duplicateAccount" class="btn btn-secondary">Duplicate</button>
+                        <span>/</span>
+                        <button @click="deleteAccount" class="btn btn-secondary">Delete</button>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="importmap">
+        {
+          "imports": {
+            "uuid": "https://cdn.skypack.dev/uuid"
+          }
+        }
+    </script>
+
+
+    <script type="module">
+        // Register v-mask globally
+        Vue.directive('mask', VueMask.VueMaskDirective);
+
+        import { v4 as uuidv4 } from 'uuid';
+
+        // Initialize Vue instance
+        new Vue({
+            el: '#app',
+            data: {
+                phone: '',
+                users: []
+            },
+            methods: {
+                async createAccount() {
+                    let sexInputs = document.getElementsByName("sex");
+                    let chosedSex;
+
+                    for (let i = 0; i < sexInputs.length; i++) {
+                        if (sexInputs[i].checked) {
+                            chosedSex = sexInputs[i].value;
+                        }
+                    }
+
+                    let newId = uuidv4();
+                    let newEmail = document.getElementById("newEmail").value;
+                    let newPassword = document.getElementById("newPassword").value;
+                    let newSurname = document.getElementById("newSurname").value;
+                    let newName = document.getElementById("newName").value;
+                    let newPhone = document.getElementById("newPhone").value;
+                    let newDateOfBirth = document.getElementById("newBirthday").value;
+                    let newSex = chosedSex;
+                    let newRole = document.getElementById("newRole").value;
+
+                    let user = {
+                        id: newId,
+                        checked: false,
+                        email: newEmail,
+                        password: newPassword,
+                        surname: newSurname,
+                        name: newName,
+                        phone: newPhone,
+                        birthday: newDateOfBirth,
+                        sex: newSex,
+                        role: newRole
+                    }
+
+                    this.users.push(user);
+
+                    document.getElementsByName("sign-in-form")[0].reset()
+                    this.phone = '';
+                },
+                async deleteAccount() {
+                    let checkedUsers = this.users.filter(user => user.checked === true);
+
+                    this.users = this.users.filter(user => !checkedUsers.some(checkedUser => checkedUser.id === user.id));
+                },
+                async duplicateAccount() {
+                    let checkedUsers = this.users.filter(user => user.checked === true);
+
+                    for (let i = 0; i < checkedUsers.length; i++) {
+                        let newUser = structuredClone(checkedUsers[i]);
+                        newUser.id = uuidv4();
+                        newUser.checked = false;
+                        this.users.push(newUser)
+                    }
+                }
+            }
+        });
+    </script>
 </body>
-
-<div class="modal fade" id="Log-in" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="Log-inLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="Log-inLabel">Log-in account:</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input id="email" type="text" class="form-control" placeholder="Your Email adress"
-                        aria-label="Your Email adress" aria-describedby="basic-addon1">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="password" type="text" class="form-control" placeholder="Your password"
-                        aria-label="Your password" aria-describedby="basic-addon1">
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Log-in</button>
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#Sign-in">Create new account</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="Sign-in" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="Sign-inLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="Sign-inLabel">Create account:</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input id="email" type="text" class="form-control" placeholder="Your Email adress"
-                        aria-label="Your Email adress" aria-describedby="basic-addon1">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="password" type="text" class="form-control" placeholder="Your password"
-                        aria-label="Your password" aria-describedby="basic-addon1">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="surname" type="text" class="form-control" placeholder="Your surname"
-                        aria-label="Your surname" aria-describedby="basic-addon1">
-                    <input id="name" type="text" class="form-control" placeholder="Your name" aria-label="Your name"
-                        aria-describedby="basic-addon1">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="birthday" type="text" class="form-control" placeholder="Your date of birth"
-                        aria-label="Your date of birth" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <select class="custom-select">
-                        <option selected>Choose your role:</option>
-                        <option value="User">Buyer</option>
-                        <option value="Administrator">Seller</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="file" accept=".png, .jpg, .jpeg">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create new account</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 </html>
