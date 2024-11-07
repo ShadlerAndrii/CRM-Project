@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/jquery.inputmask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sa384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymoush"></script>
+        crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
@@ -37,6 +37,8 @@
                     </li>
                     <li><a class="dropdown-item" href="admin-panel.html">Admin panel</a></li>
                     <li><a class="dropdown-item" href="utilities.html">Utilities</a></li>
+                    <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -186,23 +188,32 @@
                                 <input id="newEmail" type="text" class="form-control" placeholder="Your Email adress"
                                     aria-label="Your Email adress" aria-describedby="basic-addon1"
                                     pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                                    title="Please enter a valid email address (eg: name@example.com)" required>
+                                    title="Please enter a valid email address (eg: name@example.com)"
+                                    @input="validateInput">
+                                <div style="display: none; color: red;">Incorrect data format</div>
                             </div>
 
                             <div class="input-group mb-3">
                                 <input id="newPassword" type="text" class="form-control" placeholder="Your password"
                                     aria-label="Your password" aria-describedby="basic-addon1"
                                     pattern="[A-Za-z0-9\W+]{6,}"
-                                    title="The password must contain at least 6 characters in Latin/Numbers" required>
+                                    title="The password must contain at least 6 characters in Latin/Numbers"
+                                    @input="validateInput">
+                                <div style="display: none; color: red;">Incorrect data format</div>
                             </div>
 
                             <div class="input-group mb-3">
                                 <input id="newSurname" type="text" class="form-control" placeholder="Your surname"
                                     aria-label="Your surname" aria-describedby="basic-addon1" pattern="[A-Za-z]{0,20}"
-                                    title="Enter your surname in Latin (20 characters maximum)" required>
+                                    title="Enter your surname in Latin (20 characters maximum)" @input="validateInput">
+                                <div style="display: none; color: red;">Incorrect data format</div>
+                            </div>
+
+                            <div class="input-group mb-3">
                                 <input id="newName" type="text" class="form-control" placeholder="Your name"
                                     aria-label="Your name" aria-describedby="basic-addon1" pattern="[A-Za-z]{0,20}"
-                                    title="Enter your name in Latin (20 characters maximum)" required>
+                                    title="Enter your name in Latin (20 characters maximum)" @input="validateInput">
+                                <div style="display: none; color: red;">Incorrect data format</div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -210,7 +221,9 @@
                                     placeholder="Your phone number: +38(0__)-___-__-__" aria-label="Your phone number"
                                     aria-describedby="basic-addon1" v-mask="'+38(0##)-###-##-##'" v-model="phone"
                                     pattern="^\+38\(0\d{2}\)-\d{3}-\d{2}-\d{2}$"
-                                    title="Enter the phone number in the format: +38(0__)___-__-__" required>
+                                    title="Enter the phone number in the format: +38(0__)___-__-__"
+                                    @input="validateInput">
+                                <div style="color: red;">Incorrect data format</div>
                             </div>
 
                             <div>
@@ -257,11 +270,11 @@
                             <th>Email</th>
                             <th>Password</th>
                             <th>Surname</th>
-                            <th>Name</h>
+                            <th>Name</th>
                             <th>Phone</th>
                             <th>Birthday</th>
-                            <th>Sex</h>
-                            <th>Role</h>
+                            <th>Sex</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -287,7 +300,6 @@
         </div>
     </div>
 
-
     <script type="importmap">
         {
           "imports": {
@@ -312,6 +324,12 @@
             },
             methods: {
                 async createAccount() {
+                    // Hide error notification if it exists
+                    let errorNotification = document.getElementById("errorNotification");
+                    if (errorNotification) {
+                        errorNotification.style.display = "none";
+                    }
+
                     let sexInputs = document.getElementsByName("sex");
                     let chosedSex;
 
@@ -348,6 +366,16 @@
 
                     document.getElementsByName("sign-in-form")[0].reset()
                     this.phone = '';
+                },
+                validateInput(event) {
+                    const input = event.target;
+                    const errorNotification = input.nextElementSibling;
+
+                    if (input.value.trim() === "" || !input.checkValidity()) {
+                        errorNotification.style.display = "block";
+                    } else {
+                        errorNotification.style.display = "none";
+                    }
                 },
                 async deleteAccount() {
                     let checkedUsers = this.users.filter(user => user.checked === true);
