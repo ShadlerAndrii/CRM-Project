@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@syncfusion/ej2-vue-inputs": "^27.1.58",
+    "@vueform/plugin-mask": "^1.0.7",
+    "bootstrap": "^5.3.3",
+    "uuid": "^10.0.0",
+    "v-mask": "^1.4.0-alpha",
+    "vue": "^3.5.12",
+    "vue-mask": "^1.0.0",
+    "vue-the-mask": "^0.11.1"
+  }
+}
