@@ -200,10 +200,11 @@ export default {
         },
         async createSellersCultures() {
             // Валідація Amount перед збереженням
-            let Amount = this.validateAmount(this.Amount);
+            let Amount = await this.validateAmount(this.Amount);
             // Валідація HarvestDate перед створенням
-            if (this.validateDate(this.HarvestDate)) {
-                await culturesAPI.createCulture(this.sellerId, this.Name, Amount, this.HarvestDate, this.UserToken)
+            if (await this.validateDate(this.HarvestDate)) {
+                let formattedDate = await this.formatDate(this.HarvestDate);
+                await culturesAPI.createCulture(this.sellerId, this.Name, Amount, formattedDate, this.UserToken);
                 this.resetValues();
                 await this.getSellersCultures();
             }
@@ -295,6 +296,11 @@ export default {
                 alert('Invalid date format');
                 return false;
             }
+        },
+        async formatDate(date) {
+            // Перетворюємо мм.дд.уууу в дд.мм.уууу
+            const [month, day, year] = date.split(".");
+            return `${day}.${month}.${year}`;
         }
     },
     mounted: function () {
